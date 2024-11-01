@@ -1,10 +1,13 @@
 import Navbar from '@/components/Navbar'
 import ProductPage from '@/pages/Product/ProductPage'
-import ShoppingCart from '@/pages/ShoppingCart/ShoppingCart'
+import { Spin } from 'antd'
+import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
+
+const ShoppingCart = lazy(() => import('@/pages/ShoppingCart/ShoppingCart'))
 
 function App() {
   return (
@@ -12,7 +15,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<ProductPage />} />
-        <Route path='/shopping-cart' element={<ShoppingCart />} />
+        <Suspense fallback={<Spin />}>
+          <Route path='/shopping-cart' element={<ShoppingCart />} />
+        </Suspense>
       </Routes>
       <ToastContainer newestOnTop={true} className='toast-position' position='top-center' />
     </>
