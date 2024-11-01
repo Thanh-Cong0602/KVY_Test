@@ -1,4 +1,3 @@
-// store.ts
 import product from '@/redux/feature/product.slice'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { persistStore } from 'redux-persist'
