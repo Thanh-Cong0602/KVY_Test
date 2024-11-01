@@ -24,6 +24,13 @@ const SliderPrice: React.FC = () => {
     dispatch(setMaxPrice(maxPrice))
   }
 
+  const handleApply = () => {
+    setButtonText(`Min: ${minPrice} - Max: ${maxPrice}`)
+    dispatch(setMinPrice(minPrice))
+    dispatch(setMaxPrice(maxPrice))
+    setIsPopoverVisible(false)
+  }
+
   useEffect(() => {
     if (clearFilter) setButtonText('Price Range')
   }, [clearFilter])
@@ -48,11 +55,7 @@ const SliderPrice: React.FC = () => {
           <p>Maximum Price</p>
           <Input value={maxPrice} readOnly style={{ marginBottom: '20px' }} />
         </div>
-        <Button
-          type='primary'
-          onClick={() => setIsPopoverVisible(false)}
-          style={{ width: '100%' }}
-        >
+        <Button type='primary' onClick={handleApply} style={{ width: '100%' }}>
           Apply
         </Button>
       </Space>
