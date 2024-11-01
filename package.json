@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "author": "Thanh Cong Nguyen",
-  "description": "",
+  "description": "https://kvy-test-thanh-cong0602s-projects.vercel.app/",
   "type": "module",
   "scripts": {
     "dev": "vite",
