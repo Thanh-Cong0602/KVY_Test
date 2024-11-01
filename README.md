@@ -43,6 +43,14 @@ The easiest way to deploy your React app is to use the [Vercel Platform](https:/
 
 ## Features Implemented
 
-- Create and read tasks.
-- Mark tasks as complete/incomplete.
-- Filter tasks based on their completion status: All, Completed, Incomplete.
+1. **Product Data Management**
+   - Fetch and display product data from a mock API with a grid layout including images, titles, prices, categories, and ratings.
+
+2. **Product Filters**
+   - Allow users to filter products by category, price range, and rating through a dedicated filter component.
+
+3. **Sorting Options**
+   - Implement sorting for products by price, rating, and name.
+
+4. **Shopping Cart Functionality**
+   - Users can add products to the cart, view items, update quantities, remove items, and see the total price.
