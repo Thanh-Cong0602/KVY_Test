@@ -1,0 +1,14 @@
+.product__wrapper {
+  width: 100%;
+  padding: 12px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+@media (min-width: 1280px) {
+  .product__wrapper {
+    width: 80vw;
+     padding-top: 40px;
+  }
+}
+
