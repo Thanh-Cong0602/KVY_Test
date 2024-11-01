@@ -1,0 +1,10 @@
+.cart-title {
+  padding-top: 20px;
+}
+
+
+@media (min-width: 1280px) {
+  .cart-title {
+   padding-top: 40px;
+  }
+}
