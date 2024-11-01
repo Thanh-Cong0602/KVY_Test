@@ -8,8 +8,8 @@ type ProductState = {
   isFilter: boolean
   category?: string
   rating?: number
-  minPrice: number
-  maxPrice: number
+  minPrice?: number
+  maxPrice?: number
   clearFilter: boolean
   cartCount: number
   items: CartItem[]
@@ -19,8 +19,8 @@ const initialState: ProductState = {
   isFilter: false,
   category: undefined,
   rating: undefined,
-  minPrice: 20,
-  maxPrice: 200,
+  minPrice: undefined,
+  maxPrice: undefined,
   clearFilter: false,
   cartCount: 0,
   items: []
@@ -40,10 +40,10 @@ const productSlice = createSlice({
     setRating(state, action: PayloadAction<number | undefined>) {
       state.rating = action.payload
     },
-    setMinPrice(state, action: PayloadAction<number>) {
+    setMinPrice(state, action: PayloadAction<number | undefined>) {
       state.minPrice = action.payload
     },
-    setMaxPrice(state, action: PayloadAction<number>) {
+    setMaxPrice(state, action: PayloadAction<number | undefined>) {
       state.maxPrice = action.payload
     },
     setClearFilter(state, action: PayloadAction<boolean>) {

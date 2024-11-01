@@ -4,14 +4,16 @@ import { Button, Flex, Input, Popover, Slider, Space } from 'antd'
 import React, { useEffect, useState } from 'react'
 
 const SliderPrice: React.FC = () => {
+  const [minPrice, setMinPriceState] = useState<number>(20)
+  const [maxPrice, setMaxPriceState] = useState<number>(200)
   const dispatch = useAppDispatch()
-  const minPrice = useAppSelector(state => state.product.minPrice)
-  const maxPrice = useAppSelector(state => state.product.maxPrice)
   const clearFilter = useAppSelector(state => state.product.clearFilter)
   const [buttonText, setButtonText] = useState<string>('Price Range')
   const [isPopoverVisible, setIsPopoverVisible] = useState<boolean>(false)
 
   const handleSliderChange = (values: number[]) => {
+    setMinPriceState(values[0])
+    setMaxPriceState(values[1])
     dispatch(setMinPrice(values[0]))
     dispatch(setMaxPrice(values[1]))
   }
